@@ -31,13 +31,25 @@ taxo_table <- read.csv(file = input,header = T,sep = ",")
   #col 8 family
   #Species_level
 otu <- taxo_table[,c(2,3,8,9,10,12)]
-if (taxonomy_level == "species") {
+if (taxonomy_level %in% c("species","Species")) {
   otu <- otu %>% group_by(case_no,species) %>% summarize(hits=sum(num_hits))
   otu_table <- as.data.frame(pivot_wider(otu, names_from = species, values_from = hits))
   otu_table <- lapply(otu_table, unlist)
   otu_table <- data.frame(lapply(otu_table, `length<-`, max(lengths(otu_table))))
   otu_table[is.na(otu_table)] <- 0 
   write.csv(otu_table,file = paste(output,"csv",sep = "."),row.names = F)
+}else if(taxonomy_level %in% c("genus","Genus")){
+  otu <- otu %>% group_by(case_no,genus) %>% summarize(hits=sum(num_hits))
+  otu_table <- as.data.frame(pivot_wider(otu, names_from = genus, values_from = hits))
+  otu_table <- lapply(otu_table, unlist)
+  otu_table <- data.frame(lapply(otu_table, `length<-`, max(lengths(otu_table))))
+  otu_table[is.na(otu_table)] <- 0 
+  write.csv(otu_table,file = paste(output,"csv",sep = "."),row.names = F)
+}else if(taxonomy_level %in% c("family","Family")){
+  otu <- otu %>% group_by(case_no,family) %>% summarize(hits=sum(num_hits))
+  otu_table <- as.data.frame(pivot_wider(otu, names_from = family, values_from = hits))
+  otu_table <- lapply(otu_table, unlist)
+  otu_table <- data.frame(lapply(otu_table, `length<-`, max(lengths(otu_table))))
+  otu_table[is.na(otu_table)] <- 0 
+  write.csv(otu_table,file = paste(output,"csv",sep = "."),row.names = F)
 }else print("please type right Taxonomic rank with family,genus,species ")
-
-
