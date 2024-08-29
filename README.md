@@ -1,5 +1,5 @@
 # taxonomy-to-OTU-table
-this R scripts for people who own an taxonomy table and transfer into OTU style table for downstream analysis
+this R scripts for people who own an taxonomy table and want to transfer into OTU style table for downstream analysis
 ## Taxonomy table format
 You can get a taxonomy table from some kinds of classification tool, this kind of table obtain full taxonomy result of each samples. but the original OTU style table is more convenient for downstream analysis(eg. PCA).
 
