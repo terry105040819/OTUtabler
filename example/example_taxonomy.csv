@@ -1,0 +1,11 @@
+Case_No,Species,Genus,Family,Num_Hits
+S1,Escherichia coli,Escherichia,Enterobacteriaceae,120
+S1,Escherichia coli,Escherichia,Enterobacteriaceae,30
+S1,Bacteroides fragilis,Bacteroides,Bacteroidaceae,200
+S1,Faecalibacterium prausnitzii,Faecalibacterium,Ruminococcaceae,50
+S2,Bacteroides fragilis,Bacteroides,Bacteroidaceae,80
+S2,Bacteroides vulgatus,Bacteroides,Bacteroidaceae,20
+S2,Klebsiella pneumoniae,Klebsiella,Enterobacteriaceae,5
+S2,,,,40
+S3,Escherichia coli,Escherichia,Enterobacteriaceae,60
+S3,Faecalibacterium prausnitzii,Faecalibacterium,Ruminococcaceae,140
